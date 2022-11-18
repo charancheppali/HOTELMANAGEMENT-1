@@ -1,0 +1,24 @@
+﻿@model BusinessObject.RoleModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="Edit" , method="post">
+    <div>
+        @Html.HiddenFor(m => m.Id)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ISACTIVE)
+        @Html.EditorFor(m => m.ISACTIVE)
+    </div>
+    <div>
+        <input type="submit" ,value="Update Gender" />
+    </div>
+</form>
+

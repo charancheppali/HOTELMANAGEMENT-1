@@ -1,0 +1,32 @@
+﻿@model BusinessObject.AddressTypeModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="Edit" , method="post">
+    <div>
+        @Html.HiddenFor(m => m.Id)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CREATEDDATE)
+        @Html.EditorFor(m => m.CREATEDDATE)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CREATEDBY)
+        @Html.EditorFor(m => m.CREATEDBY)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ISACTIVE)
+        @Html.EditorFor(m => m.ISACTIVE)
+    </div>
+    <div>
+        <input type="submit" ,value="Update Gender" />
+    </div>
+</form>
+

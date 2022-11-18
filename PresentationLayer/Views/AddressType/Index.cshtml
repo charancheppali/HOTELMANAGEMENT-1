@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BusinessObject.AddressTypeModel>
+@{
+    ViewBag.Title = "AddressType";
+}
+
+<h2>AddressType</h2>
+
+<div>
+    @Html.ActionLink("Add AddressType", "Create")
+</div>
+
+<table class="table">
+    <tr>
+        <th> @Html.DisplayNameFor(m => m.Name)</th>
+        <th> @Html.DisplayNameFor(m => m.ISACTIVE)</th>
+        <th> @Html.DisplayNameFor(m => m.CREATEDDATE)</th>
+        <th> @Html.DisplayNameFor(m => m.CREATEDBY)</th>
+    </tr>
+    @foreach (BusinessObject.AddressTypeModel addressTypeModel in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => addressTypeModel.Name)</td>
+                    <td>@Html.DisplayFor(m => addressTypeModel.ISACTIVE)</td>
+                    <td>@Html.DisplayFor(m => addressTypeModel.CREATEDDATE)</td>
+                    <td>@Html.DisplayFor(m => addressTypeModel.CREATEDBY)</td>
+                    <td>
+                        @Html.ActionLink("Edit AddressType" , "Edit", new { Id = addressTypeModel.Id}) |
+                        @Html.ActionLink("Delete AddressType" , "Delete", new { Id = addressTypeModel.Id})
+                    </td>
+                </tr>
+            }
+</table>
+

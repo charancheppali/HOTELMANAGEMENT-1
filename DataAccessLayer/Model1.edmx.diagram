@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="877ed11cfc88471191d660ca27a7bffc" Name="Diagram1">
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblAddress" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblAddressType" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblCollection" Width="1.5" PointX="16.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblCustomer" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblEmployee" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblGender" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblInventory" Width="1.5" PointX="9.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblInvoice" Width="1.5" PointX="14.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblMenuItem" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblOrderDelivery" Width="1.5" PointX="12" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblOrder" Width="1.5" PointX="9.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblProduct" Width="1.5" PointX="7.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENT1Model.tblRole" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblAddres__ADDRE__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblCustom__ADDRE__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblCustom__HOTEL__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblEmploy__ADDRE__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblCollec__INVOI__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblEmploy__CUSTO__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblInvent__CUSTO__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblMenuIt__CUSTO__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblProduc__CUSTO__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblEmploy__GENDE__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblEmploy__ROLEI__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblInvent__PRODU__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblInvoic__DELIV__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblOrders__MENUI__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENT1Model.FK__tblOrderD__ORDER__5812160E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

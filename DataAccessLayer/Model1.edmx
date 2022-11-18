@@ -1,0 +1,1174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HOTELMANAGEMENT1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAddress">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PLACE" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PHONENUMBER" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ADDRESSTYPEID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblAddressType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AMOUNT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PENDINGAMOUNT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="INVOICEID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AADHARNO" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="ADDRESSID" Type="int" />
+          <Property Name="HOTELADDRESSID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AADHARNO" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="SALARY" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DOJ" Type="datetime" />
+          <Property Name="GENDERID" Type="int" />
+          <Property Name="ADDRESSID" Type="int" />
+          <Property Name="CUSTOMERID" Type="int" />
+          <Property Name="ROLEID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblGender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PRODUCTID" Type="int" />
+          <Property Name="QTY" Type="int" Nullable="false" />
+          <Property Name="UNITS" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblInvoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DELIVERYID" Type="int" />
+          <Property Name="TOTALAMOUNT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblMenuItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="int" />
+          <Property Name="EXTRAINFO" Type="nvarchar" MaxLength="255" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblOrderDelivery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORDERID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblOrders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERSONNAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PERSONPHONENUMBER" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="MENUITEMID" Type="int" />
+          <Property Name="QTY" Type="int" Nullable="false" />
+          <Property Name="ORDERFORDATE" Type="datetime" />
+          <Property Name="TOTALPRICE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDBY" Type="int" />
+        </EntityType>
+        <Association Name="FK__tblAddres__ADDRE__300424B4">
+          <End Role="tblAddressType" Type="Self.tblAddressType" Multiplicity="0..1" />
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddressType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAddress">
+              <PropertyRef Name="ADDRESSTYPEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCollec__INVOI__619B8048">
+          <End Role="tblInvoice" Type="Self.tblInvoice" Multiplicity="0..1" />
+          <End Role="tblCollection" Type="Self.tblCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInvoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCollection">
+              <PropertyRef Name="INVOICEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__ADDRE__34C8D9D1">
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="0..1" />
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddress">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCustomer">
+              <PropertyRef Name="ADDRESSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__HOTEL__35BCFE0A">
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="0..1" />
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddress">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCustomer">
+              <PropertyRef Name="HOTELADDRESSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__ADDRE__46E78A0C">
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddress">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="ADDRESSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__CUSTO__47DBAE45">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__GENDE__45F365D3">
+          <End Role="tblGender" Type="Self.tblGender" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="GENDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__ROLEI__48CFD27E">
+          <End Role="tblRoles" Type="Self.tblRoles" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="ROLEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInvent__CUSTO__403A8C7D">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblInventory" Type="Self.tblInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblInventory">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInvent__PRODU__3F466844">
+          <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
+          <End Role="tblInventory" Type="Self.tblInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblInventory">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInvoic__DELIV__5CD6CB2B">
+          <End Role="tblOrderDelivery" Type="Self.tblOrderDelivery" Multiplicity="0..1" />
+          <End Role="tblInvoice" Type="Self.tblInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrderDelivery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblInvoice">
+              <PropertyRef Name="DELIVERYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblMenuIt__CUSTO__4D94879B">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblMenuItem" Type="Self.tblMenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblMenuItem">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblOrderD__ORDER__5812160E">
+          <End Role="tblOrders" Type="Self.tblOrders" Multiplicity="0..1" />
+          <End Role="tblOrderDelivery" Type="Self.tblOrderDelivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOrderDelivery">
+              <PropertyRef Name="ORDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblOrders__MENUI__52593CB8">
+          <End Role="tblMenuItem" Type="Self.tblMenuItem" Multiplicity="0..1" />
+          <End Role="tblOrders" Type="Self.tblOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOrders">
+              <PropertyRef Name="MENUITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblProduc__CUSTO__3A81B327">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblProduct">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HOTELMANAGEMENT1ModelStoreContainer">
+          <EntitySet Name="tblAddress" EntityType="Self.tblAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAddressType" EntityType="Self.tblAddressType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCollection" EntityType="Self.tblCollection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGender" EntityType="Self.tblGender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInventory" EntityType="Self.tblInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInvoice" EntityType="Self.tblInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMenuItem" EntityType="Self.tblMenuItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrderDelivery" EntityType="Self.tblOrderDelivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrders" EntityType="Self.tblOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRoles" EntityType="Self.tblRoles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblAddres__ADDRE__300424B4" Association="Self.FK__tblAddres__ADDRE__300424B4">
+            <End Role="tblAddressType" EntitySet="tblAddressType" />
+            <End Role="tblAddress" EntitySet="tblAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCollec__INVOI__619B8048" Association="Self.FK__tblCollec__INVOI__619B8048">
+            <End Role="tblInvoice" EntitySet="tblInvoice" />
+            <End Role="tblCollection" EntitySet="tblCollection" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__ADDRE__34C8D9D1" Association="Self.FK__tblCustom__ADDRE__34C8D9D1">
+            <End Role="tblAddress" EntitySet="tblAddress" />
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__HOTEL__35BCFE0A" Association="Self.FK__tblCustom__HOTEL__35BCFE0A">
+            <End Role="tblAddress" EntitySet="tblAddress" />
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__ADDRE__46E78A0C" Association="Self.FK__tblEmploy__ADDRE__46E78A0C">
+            <End Role="tblAddress" EntitySet="tblAddress" />
+            <End Role="tblEmployee" EntitySet="tblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__CUSTO__47DBAE45" Association="Self.FK__tblEmploy__CUSTO__47DBAE45">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblEmployee" EntitySet="tblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__GENDE__45F365D3" Association="Self.FK__tblEmploy__GENDE__45F365D3">
+            <End Role="tblGender" EntitySet="tblGender" />
+            <End Role="tblEmployee" EntitySet="tblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__ROLEI__48CFD27E" Association="Self.FK__tblEmploy__ROLEI__48CFD27E">
+            <End Role="tblRoles" EntitySet="tblRoles" />
+            <End Role="tblEmployee" EntitySet="tblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInvent__CUSTO__403A8C7D" Association="Self.FK__tblInvent__CUSTO__403A8C7D">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblInventory" EntitySet="tblInventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInvent__PRODU__3F466844" Association="Self.FK__tblInvent__PRODU__3F466844">
+            <End Role="tblProduct" EntitySet="tblProduct" />
+            <End Role="tblInventory" EntitySet="tblInventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInvoic__DELIV__5CD6CB2B" Association="Self.FK__tblInvoic__DELIV__5CD6CB2B">
+            <End Role="tblOrderDelivery" EntitySet="tblOrderDelivery" />
+            <End Role="tblInvoice" EntitySet="tblInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblMenuIt__CUSTO__4D94879B" Association="Self.FK__tblMenuIt__CUSTO__4D94879B">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblMenuItem" EntitySet="tblMenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblOrderD__ORDER__5812160E" Association="Self.FK__tblOrderD__ORDER__5812160E">
+            <End Role="tblOrders" EntitySet="tblOrders" />
+            <End Role="tblOrderDelivery" EntitySet="tblOrderDelivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblOrders__MENUI__52593CB8" Association="Self.FK__tblOrders__MENUI__52593CB8">
+            <End Role="tblMenuItem" EntitySet="tblMenuItem" />
+            <End Role="tblOrders" EntitySet="tblOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblProduc__CUSTO__3A81B327" Association="Self.FK__tblProduc__CUSTO__3A81B327">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblProduct" EntitySet="tblProduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HOTELMANAGEMENT1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAddress">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DISTRICT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PLACE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PHONENUMBER" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADDRESSTYPEID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblAddressType" Relationship="Self.FK__tblAddres__ADDRE__300424B4" FromRole="tblAddress" ToRole="tblAddressType" />
+          <NavigationProperty Name="tblCustomers" Relationship="Self.FK__tblCustom__ADDRE__34C8D9D1" FromRole="tblAddress" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblCustomers1" Relationship="Self.FK__tblCustom__HOTEL__35BCFE0A" FromRole="tblAddress" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__ADDRE__46E78A0C" FromRole="tblAddress" ToRole="tblEmployee" />
+        </EntityType>
+        <EntityType Name="tblAddressType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblAddresses" Relationship="Self.FK__tblAddres__ADDRE__300424B4" FromRole="tblAddressType" ToRole="tblAddress" />
+        </EntityType>
+        <EntityType Name="tblCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AMOUNT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PENDINGAMOUNT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="INVOICEID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblInvoice" Relationship="Self.FK__tblCollec__INVOI__619B8048" FromRole="tblCollection" ToRole="tblInvoice" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AADHARNO" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADDRESSID" Type="Int32" />
+          <Property Name="HOTELADDRESSID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblAddress" Relationship="Self.FK__tblCustom__ADDRE__34C8D9D1" FromRole="tblCustomer" ToRole="tblAddress" />
+          <NavigationProperty Name="tblAddress1" Relationship="Self.FK__tblCustom__HOTEL__35BCFE0A" FromRole="tblCustomer" ToRole="tblAddress" />
+          <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__CUSTO__47DBAE45" FromRole="tblCustomer" ToRole="tblEmployee" />
+          <NavigationProperty Name="tblInventories" Relationship="Self.FK__tblInvent__CUSTO__403A8C7D" FromRole="tblCustomer" ToRole="tblInventory" />
+          <NavigationProperty Name="tblMenuItems" Relationship="Self.FK__tblMenuIt__CUSTO__4D94879B" FromRole="tblCustomer" ToRole="tblMenuItem" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__CUSTO__3A81B327" FromRole="tblCustomer" ToRole="tblProduct" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AADHARNO" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SALARY" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DOJ" Type="DateTime" Precision="3" />
+          <Property Name="GENDERID" Type="Int32" />
+          <Property Name="ADDRESSID" Type="Int32" />
+          <Property Name="CUSTOMERID" Type="Int32" />
+          <Property Name="ROLEID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblAddress" Relationship="Self.FK__tblEmploy__ADDRE__46E78A0C" FromRole="tblEmployee" ToRole="tblAddress" />
+          <NavigationProperty Name="tblCustomer" Relationship="Self.FK__tblEmploy__CUSTO__47DBAE45" FromRole="tblEmployee" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblGender" Relationship="Self.FK__tblEmploy__GENDE__45F365D3" FromRole="tblEmployee" ToRole="tblGender" />
+          <NavigationProperty Name="tblRole" Relationship="Self.FK__tblEmploy__ROLEI__48CFD27E" FromRole="tblEmployee" ToRole="tblRoles" />
+        </EntityType>
+        <EntityType Name="tblGender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__GENDE__45F365D3" FromRole="tblGender" ToRole="tblEmployee" />
+        </EntityType>
+        <EntityType Name="tblInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PRODUCTID" Type="Int32" />
+          <Property Name="QTY" Type="Int32" Nullable="false" />
+          <Property Name="UNITS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblCustomer" Relationship="Self.FK__tblInvent__CUSTO__403A8C7D" FromRole="tblInventory" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblInvent__PRODU__3F466844" FromRole="tblInventory" ToRole="tblProduct" />
+        </EntityType>
+        <EntityType Name="tblInvoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DELIVERYID" Type="Int32" />
+          <Property Name="TOTALAMOUNT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblCollections" Relationship="Self.FK__tblCollec__INVOI__619B8048" FromRole="tblInvoice" ToRole="tblCollection" />
+          <NavigationProperty Name="tblOrderDelivery" Relationship="Self.FK__tblInvoic__DELIV__5CD6CB2B" FromRole="tblInvoice" ToRole="tblOrderDelivery" />
+        </EntityType>
+        <EntityType Name="tblMenuItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" />
+          <Property Name="EXTRAINFO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblCustomer" Relationship="Self.FK__tblMenuIt__CUSTO__4D94879B" FromRole="tblMenuItem" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblOrders" Relationship="Self.FK__tblOrders__MENUI__52593CB8" FromRole="tblMenuItem" ToRole="tblOrders" />
+        </EntityType>
+        <EntityType Name="tblOrderDelivery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORDERID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblInvoices" Relationship="Self.FK__tblInvoic__DELIV__5CD6CB2B" FromRole="tblOrderDelivery" ToRole="tblInvoice" />
+          <NavigationProperty Name="tblOrder" Relationship="Self.FK__tblOrderD__ORDER__5812160E" FromRole="tblOrderDelivery" ToRole="tblOrders" />
+        </EntityType>
+        <EntityType Name="tblOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERSONNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PERSONPHONENUMBER" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MENUITEMID" Type="Int32" />
+          <Property Name="QTY" Type="Int32" Nullable="false" />
+          <Property Name="ORDERFORDATE" Type="DateTime" Precision="3" />
+          <Property Name="TOTALPRICE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblMenuItem" Relationship="Self.FK__tblOrders__MENUI__52593CB8" FromRole="tblOrders" ToRole="tblMenuItem" />
+          <NavigationProperty Name="tblOrderDeliveries" Relationship="Self.FK__tblOrderD__ORDER__5812160E" FromRole="tblOrders" ToRole="tblOrderDelivery" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblCustomer" Relationship="Self.FK__tblProduc__CUSTO__3A81B327" FromRole="tblProduct" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblInventories" Relationship="Self.FK__tblInvent__PRODU__3F466844" FromRole="tblProduct" ToRole="tblInventory" />
+        </EntityType>
+        <EntityType Name="tblRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDBY" Type="Int32" />
+          <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__ROLEI__48CFD27E" FromRole="tblRoles" ToRole="tblEmployee" />
+        </EntityType>
+        <Association Name="FK__tblAddres__ADDRE__300424B4">
+          <End Role="tblAddressType" Type="Self.tblAddressType" Multiplicity="0..1" />
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddressType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAddress">
+              <PropertyRef Name="ADDRESSTYPEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__ADDRE__34C8D9D1">
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="0..1" />
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddress">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCustomer">
+              <PropertyRef Name="ADDRESSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__HOTEL__35BCFE0A">
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="0..1" />
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddress">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCustomer">
+              <PropertyRef Name="HOTELADDRESSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__ADDRE__46E78A0C">
+          <End Role="tblAddress" Type="Self.tblAddress" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddress">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="ADDRESSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCollec__INVOI__619B8048">
+          <End Role="tblInvoice" Type="Self.tblInvoice" Multiplicity="0..1" />
+          <End Role="tblCollection" Type="Self.tblCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInvoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCollection">
+              <PropertyRef Name="INVOICEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__CUSTO__47DBAE45">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInvent__CUSTO__403A8C7D">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblInventory" Type="Self.tblInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblInventory">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblMenuIt__CUSTO__4D94879B">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblMenuItem" Type="Self.tblMenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblMenuItem">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblProduc__CUSTO__3A81B327">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblProduct">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__GENDE__45F365D3">
+          <End Role="tblGender" Type="Self.tblGender" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="GENDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__ROLEI__48CFD27E">
+          <End Role="tblRoles" Type="Self.tblRole" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="ROLEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInvent__PRODU__3F466844">
+          <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
+          <End Role="tblInventory" Type="Self.tblInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblInventory">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInvoic__DELIV__5CD6CB2B">
+          <End Role="tblOrderDelivery" Type="Self.tblOrderDelivery" Multiplicity="0..1" />
+          <End Role="tblInvoice" Type="Self.tblInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrderDelivery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblInvoice">
+              <PropertyRef Name="DELIVERYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblOrders__MENUI__52593CB8">
+          <End Role="tblMenuItem" Type="Self.tblMenuItem" Multiplicity="0..1" />
+          <End Role="tblOrders" Type="Self.tblOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOrders">
+              <PropertyRef Name="MENUITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblOrderD__ORDER__5812160E">
+          <End Role="tblOrders" Type="Self.tblOrder" Multiplicity="0..1" />
+          <End Role="tblOrderDelivery" Type="Self.tblOrderDelivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOrderDelivery">
+              <PropertyRef Name="ORDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HOTELMANAGEMENT1_Context" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAddresses" EntityType="Self.tblAddress" />
+          <EntitySet Name="tblAddressTypes" EntityType="Self.tblAddressType" />
+          <EntitySet Name="tblCollections" EntityType="Self.tblCollection" />
+          <EntitySet Name="tblCustomers" EntityType="Self.tblCustomer" />
+          <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+          <EntitySet Name="tblGenders" EntityType="Self.tblGender" />
+          <EntitySet Name="tblInventories" EntityType="Self.tblInventory" />
+          <EntitySet Name="tblInvoices" EntityType="Self.tblInvoice" />
+          <EntitySet Name="tblMenuItems" EntityType="Self.tblMenuItem" />
+          <EntitySet Name="tblOrderDeliveries" EntityType="Self.tblOrderDelivery" />
+          <EntitySet Name="tblOrders" EntityType="Self.tblOrder" />
+          <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
+          <EntitySet Name="tblRoles" EntityType="Self.tblRole" />
+          <AssociationSet Name="FK__tblAddres__ADDRE__300424B4" Association="Self.FK__tblAddres__ADDRE__300424B4">
+            <End Role="tblAddressType" EntitySet="tblAddressTypes" />
+            <End Role="tblAddress" EntitySet="tblAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__ADDRE__34C8D9D1" Association="Self.FK__tblCustom__ADDRE__34C8D9D1">
+            <End Role="tblAddress" EntitySet="tblAddresses" />
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__HOTEL__35BCFE0A" Association="Self.FK__tblCustom__HOTEL__35BCFE0A">
+            <End Role="tblAddress" EntitySet="tblAddresses" />
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__ADDRE__46E78A0C" Association="Self.FK__tblEmploy__ADDRE__46E78A0C">
+            <End Role="tblAddress" EntitySet="tblAddresses" />
+            <End Role="tblEmployee" EntitySet="tblEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCollec__INVOI__619B8048" Association="Self.FK__tblCollec__INVOI__619B8048">
+            <End Role="tblInvoice" EntitySet="tblInvoices" />
+            <End Role="tblCollection" EntitySet="tblCollections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__CUSTO__47DBAE45" Association="Self.FK__tblEmploy__CUSTO__47DBAE45">
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+            <End Role="tblEmployee" EntitySet="tblEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInvent__CUSTO__403A8C7D" Association="Self.FK__tblInvent__CUSTO__403A8C7D">
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+            <End Role="tblInventory" EntitySet="tblInventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblMenuIt__CUSTO__4D94879B" Association="Self.FK__tblMenuIt__CUSTO__4D94879B">
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+            <End Role="tblMenuItem" EntitySet="tblMenuItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblProduc__CUSTO__3A81B327" Association="Self.FK__tblProduc__CUSTO__3A81B327">
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+            <End Role="tblProduct" EntitySet="tblProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__GENDE__45F365D3" Association="Self.FK__tblEmploy__GENDE__45F365D3">
+            <End Role="tblGender" EntitySet="tblGenders" />
+            <End Role="tblEmployee" EntitySet="tblEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__ROLEI__48CFD27E" Association="Self.FK__tblEmploy__ROLEI__48CFD27E">
+            <End Role="tblRoles" EntitySet="tblRoles" />
+            <End Role="tblEmployee" EntitySet="tblEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInvent__PRODU__3F466844" Association="Self.FK__tblInvent__PRODU__3F466844">
+            <End Role="tblProduct" EntitySet="tblProducts" />
+            <End Role="tblInventory" EntitySet="tblInventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInvoic__DELIV__5CD6CB2B" Association="Self.FK__tblInvoic__DELIV__5CD6CB2B">
+            <End Role="tblOrderDelivery" EntitySet="tblOrderDeliveries" />
+            <End Role="tblInvoice" EntitySet="tblInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblOrders__MENUI__52593CB8" Association="Self.FK__tblOrders__MENUI__52593CB8">
+            <End Role="tblMenuItem" EntitySet="tblMenuItems" />
+            <End Role="tblOrders" EntitySet="tblOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblOrderD__ORDER__5812160E" Association="Self.FK__tblOrderD__ORDER__5812160E">
+            <End Role="tblOrders" EntitySet="tblOrders" />
+            <End Role="tblOrderDelivery" EntitySet="tblOrderDeliveries" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HOTELMANAGEMENT1ModelStoreContainer" CdmEntityContainer="HOTELMANAGEMENT1_Context">
+          <EntitySetMapping Name="tblAddresses">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblAddress">
+              <MappingFragment StoreEntitySet="tblAddress">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="PLACE" ColumnName="PLACE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONENUMBER" ColumnName="PHONENUMBER" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ADDRESSTYPEID" ColumnName="ADDRESSTYPEID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAddressTypes">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblAddressType">
+              <MappingFragment StoreEntitySet="tblAddressType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCollections">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblCollection">
+              <MappingFragment StoreEntitySet="tblCollection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="PENDINGAMOUNT" ColumnName="PENDINGAMOUNT" />
+                <ScalarProperty Name="INVOICEID" ColumnName="INVOICEID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomers">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AADHARNO" ColumnName="AADHARNO" />
+                <ScalarProperty Name="ADDRESSID" ColumnName="ADDRESSID" />
+                <ScalarProperty Name="HOTELADDRESSID" ColumnName="HOTELADDRESSID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmployees">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblEmployee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AADHARNO" ColumnName="AADHARNO" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+                <ScalarProperty Name="GENDERID" ColumnName="GENDERID" />
+                <ScalarProperty Name="ADDRESSID" ColumnName="ADDRESSID" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGenders">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblGender">
+              <MappingFragment StoreEntitySet="tblGender">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInventories">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblInventory">
+              <MappingFragment StoreEntitySet="tblInventory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInvoices">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblInvoice">
+              <MappingFragment StoreEntitySet="tblInvoice">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DELIVERYID" ColumnName="DELIVERYID" />
+                <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMenuItems">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblMenuItem">
+              <MappingFragment StoreEntitySet="tblMenuItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="EXTRAINFO" ColumnName="EXTRAINFO" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrderDeliveries">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblOrderDelivery">
+              <MappingFragment StoreEntitySet="tblOrderDelivery">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrders">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblOrder">
+              <MappingFragment StoreEntitySet="tblOrders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PERSONNAME" ColumnName="PERSONNAME" />
+                <ScalarProperty Name="PERSONPHONENUMBER" ColumnName="PERSONPHONENUMBER" />
+                <ScalarProperty Name="MENUITEMID" ColumnName="MENUITEMID" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="ORDERFORDATE" ColumnName="ORDERFORDATE" />
+                <ScalarProperty Name="TOTALPRICE" ColumnName="TOTALPRICE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblProduct">
+              <MappingFragment StoreEntitySet="tblProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRoles">
+            <EntityTypeMapping TypeName="HOTELMANAGEMENT1Model.tblRole">
+              <MappingFragment StoreEntitySet="tblRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
